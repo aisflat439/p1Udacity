@@ -129,7 +129,8 @@ def create_movie_tiles_content(movies):
     # The HTML content for this section of the page
     content = ''
     for movie in movies:
-        if movie.__class__.__name__ == 'TVShow':
+        # checks if Object is a Movie or TVShow (see media.py)
+        if movie.__class__.__name__ == 'TVShow': # it's a TVShow
             # Extract the youtube ID from the url
             youtube_id_match = re.search(r'(?<=v=)[^&#]+', movie.theme_song_url)
             youtube_id_match = youtube_id_match or re.search(r'(?<=be/)[^&#]+', movie.theme_song_url)
@@ -159,6 +160,7 @@ def create_movie_tiles_content(movies):
         # )
     return content
 
+# receives array from entertainment_center.py full of objects of type Movie and TVShow
 def open_movies_page(movies):
   # Create or overwrite the output file
   output_file = open('fresh_tomatoes.html', 'w')

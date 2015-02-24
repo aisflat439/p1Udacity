@@ -1,7 +1,9 @@
-
+# imports media.py for object defintions
+# imports fresh_tomatoes.py for HTML creation
 import fresh_tomatoes
 import media
 
+# movie object instance creation and data entry
 toy_story = media.Movie(120,
 	"Toy Story",
 	"A story about a boy and his toys",
@@ -44,6 +46,7 @@ rounders = media.Movie(120,
 	"http://upload.wikimedia.org/wikipedia/en/thumb/6/67/RoundersPoster.jpg/220px-RoundersPoster.jpg",
 	"https://www.youtube.com/watch?v=dtJvyTKe1iE")
 
+# TVShow object instance creation and data entry
 friends = media.TVShow(30,
 	"Friends",
 	"Six friends live in New York",
@@ -58,6 +61,8 @@ the_wire = media.TVShow(60,
 	"https://www.youtube.com/watch?v=K3rZgs3dudI",
 	5)
 
+# adds objects to array
 movies = [toy_story, avatar, big_lebowski, armageddon, independence_day, amelie, rounders, friends, the_wire]
 
+# passes array to function open_movies_page found in fresh_tomatoes.py
 fresh_tomatoes.open_movies_page(movies)
